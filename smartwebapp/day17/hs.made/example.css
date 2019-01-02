@@ -1,0 +1,14 @@
+@charset 'utf-8';
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+.content{
+	height: 200px;
+	width: 100%;
+	border: 1px solid black;
+}
+.box{
+	width: 50px;
+}

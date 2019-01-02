@@ -1,0 +1,33 @@
+@charset 'utf-8';
+/* box 클래스 */
+.box{
+    background-color: aliceblue;
+    background-image: url('../cat.jpg');
+    /* 
+    background-position-x: center; x축 기준으로 가운데
+    background-position-y: center; y축 기준으로 가운데
+    */
+    background-position: center center;
+    background-repeat: no-repeat; /* repeat는 반복 앞에 no를 붙여 반복하지않음 */
+    height: 400px;
+}
+div { font : normal 24px verdata;
+    cursor: pointer; /* courson:를 넣어 마우스를 특정위치에 가져갔을때 나오는효과 */
+}
+.dropText {text-shadow: 3px 3px;}
+.redText {text-shadow: 3px 3px red;}
+.blurText {text-shadow: 3px 3px 5px skyblue;} /* 3번째 픽셀이 번짐효과 */
+.glowEffect {text-shadow: 0px 0px 3px red;}
+.wordArtEffect {
+    color: white;
+    text-shadow: 0px 0px 3px darkblue;
+}
+.threeDEffect {
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+/* multiEffect 는 다양한 효과를 넣을수 있음을 보여준것 */
+.multiEffect {
+    color: yellow;
+    text-shadow: 2px 2px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}

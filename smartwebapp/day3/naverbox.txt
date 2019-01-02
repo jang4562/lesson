@@ -1,0 +1,18 @@
+id와 클래스의 차이
+클래스는 여러개의 값을 동시에 가질 수 있dmau dufjrnseptj tkdydgkf tn dlTek.
+<body>
+    <div class="container font-bold">
+    </div>
+    <div class="container font-bold font-12">   <!-- 가능 -->
+    </div>
+</body>
+
+id는 한개의 값을 가지며 여러군데에서 사용할수 없다 
+<body>
+    <div id="top">
+    </div>
+    <div id="top"> <!-- 불가능 -->
+    </div>
+    <div id="top bottom"> <!-- 불가능 -->
+    </div>
+</body>

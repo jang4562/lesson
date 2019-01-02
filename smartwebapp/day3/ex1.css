@@ -1,0 +1,28 @@
+@charset 'utf-8';
+.box{
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    color: white;
+    background-color: red;
+    display: inline-block;
+    text-align: center ; /* 글짜를 가운데로 보내기 */
+    /* box-sizing을 안하면 padding의 크기에다 height의 크기가 더해진 박스가 생성이됨.
+    따라서 높이가 120px이 되기때문에 이를 막기 위해 box-sizing을 이용 */
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+#h,
+#k{ /* 포지션 설정을하여 hover등을 붙여 위치를조정할수있게해주는 태그 */
+    position: relative;
+}
+#h:hover{
+    top: 20px;
+    left: 20px;
+    background-color: green;
+}
+#k:hover{
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+}

@@ -1,0 +1,50 @@
+@charset 'utf-8';
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+nav::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+.ham-menu{
+  float: right;
+  cursor: pointer;
+  font-size: 35px;
+}
+.sidebar{
+  position: absolute;
+  /* top : 0 , bottom : 0 을 잡으면 알아서 높이를잡기때문에 */
+  top: 0;
+  bottom: 0;
+  right: -200px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid black;
+}
+.sidebar-close{
+  font-size: 35px;
+  float: right;
+  cursor: pointer;
+}
+p{
+  font-size: 40px;
+  text-align: center;
+  opacity: 0;
+  animation-name: open;
+  animation-duration: 2s;
+  animation-iteration-count: none;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  height: 200px;
+  overflow: auto;
+}
+p::-webkit-scrollbar {
+  display:none;
+  } 
+@keyframes open {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

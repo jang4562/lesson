@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>복습</title>
+</head>
+<body>
+    <a href="http://naver.com">
+        <img src="../cat.jpg" alt="고양이"></a><br><br>
+    <!--밑줄이생기고 가장자리를눌렀을때 작동을안함-->
+    <button>
+        <a href="http://naver.com">네이버</a>
+    </button><br><br>
+    <!--밑줄이 생기지않고 가장자리를 눌러도 작동을함-->
+    <a href="http://naver.com"><button>네이버</button></a><br><br>
+    <!--위에줄과같지만 input태그가 단일이라 한가지경우뿐 -->
+    <a href="http://www.naver.com"><input type="button" value="네이버"></a><br><br>
+    <!-- 17번 예제외 같은형태지만 버튼에 type를 입력해줘야 타입이수정되어 17번예제처럼 수행됨 -->
+    <!-- <form action="">
+       <a href="http://naver.com"><button type="button">네이버</button>
+    </form> -->
+
+    <!-- 
+        일반적(대부분)으로 input 태그는 form태그 안에 들어가 있음
+        input태그의 목적은 정보를 입력하는 것
+        입력한 정보를 처리하기 위해 서버에 정보를 전송하는 form태그와 같이사용 됨
+        button태그나 input태그의 button도 같이 사용
+     -->
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+    <!-- 
+    checkbox는 중복을 허용하면서 선택할 경우
+    선택해제가 가능
+    radia는 주로 중복을 허용하지 않을 경우  (속성 중 name를 이용하여 동일한 name을 가진 
+    다른 radio가 선택되면 이전에 선택된 건 해제됨) 선택 해제가 불가능
+    -->
+    <input type="checkbox" name="" id="">
+    <input type="radio" name="gender" id="" checked>
+    <input type="radio" name="gender" id="" >
+    <!-- 
+        email은 입력한 내용이 email형식인지 확인하여 아닐 경우 안내 메시지 출력해줌. 
+        email형식은 xxx@yyy. 이렇게 입력받은 문자열이
+        원하는 조건을 만족하는지 확인하는 작업을 유효성 검사라 함
+     -->
+    <input type="email" name="" id="">
+    <!-- 
+        첨부파일과 같이 내 pc에 있는 파일을 선택할 시 사용
+     -->
+    <input type="file" name="" id="">
+    <br>
+    <!--
+         a태그는 다른페이지로 이동할 때 사용하거나 같은 페이지안에서 내가 원하는 위치로 이동할 때 사용  
+         속성 href안에 주소를 입력할 때 http://를 입력하지 않으면 base태그에서 설정된 주소에 주소 이어붙이기가 되기 때문에
+         동일한 사이트에서 이동할 때에는 http://를 사용하지 않지만 다른 사이트를 이용할 때에는 붙여줘야 함
+         같은 페이지에서 원하는 위치로 이동하는 경우 href 속성에 #아이디명으로 내가원하는 아이디가 있는 곳으로
+         이동할수 있음 img태그와 button태그와도 자주 쓰임
+    -->
+    <a href="http://www.naver.com"></a>
+    <!-- 
+        ui태그와 li태그는 주로 메뉴를 만들 때 사용하고 이 때 1메뉴큰 세로로 보이지않음
+     -->
+    <ul>
+        <li>하나</li>
+        <li>둘</li>
+        <li>셋</li>
+    </ul>
+
+
+    
+</body>
+</html>

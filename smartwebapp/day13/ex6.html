@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="jquery-3.3.1.js"></script>
+	<title>Document</title>
+	<style>
+		div{
+			width: 80px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 40px;
+			display: inline-block;
+			border: 1px solid black;		
+		}
+		.click{
+			border-color: red;
+		}
+		.red{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	
+	<script>
+		$(document).ready(function(){
+			$('div').click(function(){
+				// this = 현재이벤트가 실현되는 객체(위에서 클릭(click)을 받은 객체가된다, 1 을클릭하면 this는 1, 4 를 클릭하면 this는 4)
+				$(this).toggleClass('red');
+			})
+			// 1. css에 클래스를 만들고 원하는 동작을만든다 (ex: red클래스 는 red 컬러 배경)
+			// 2. 원하는 태그를 지정하고 동작을 지정한다(ex ('div').eq(0)에 click동작함수)
+			// 3. 2에서 지정한태그에 toggleClass를 만들어 1에서 만든 클래스를넣어준다
+			// ps. div태그를가진 객체들중에 첫번째(배열 : 0)을 기준으로 누를때 'red' 클래스를 넣다 뺀다.
+			
+			/* 내가만든예제
+			$('div').eq(0).click(function(){
+				$('div').eq(0).toggleClass('red');	
+			})
+			*/
+		});
+	</script>
+</body>
+</html>

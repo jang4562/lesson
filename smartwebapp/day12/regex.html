@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="pw"> <!-- onchange="length()" -->
+	<button onclick="validationpw2()">클릭</button>
+	<br>
+	<div id="pw-error"></div>
+	<div id="length">비밀번호는 8자 이상 20자 이하여야합니다.</div>
+	<div id="regex">정규표현식에 맞지 않습니다.</div>
+	<script>
+		function clearBox(){
+			document.getElementById('length').style.display = 'none';
+			document.getElementById('regex').style.display = 'none';
+		}
+		function showBox(id) {
+			document.getElementById(id).style.display = 'block';
+		}
+		
+		// document.createElement('태그명')
+		// document.createTextNode('문자열')
+		// 객체1.removeChild(객체2)
+		function createErrorMessage(message){
+			// sapn태그를 생성
+			var spanbox = document.createElement('span');
+			// 텍스트 노드를 만들어서 해당 텍스트에 message를 입력
+			var textmessage = document.createTextNode(message)
+			// span태그에 텍스트 노드를 붙인다
+			spanbox.appendChild(textmessage);
+			// id가 pw-error()인 요소의 객체 정보를 가져오고
+			var error = document.getElementById('pw-error');
+			// 해당 객체의 span태그를 붙인다.
+			error.appendChild(spanbox);
+		}
+		function clearErrorMessage(){
+			// id가 pw-error인 요소의 객체정보1를 가져오고
+			var error = document.getElementById('pw-error');
+			// id가 pw-error인 요소안에 있는 span의 객체정보2를 가져온 후
+			var spanbox = document.querySelector('#pw-error>span');
+			// var spanbox = error.getElementsByTagName('span');
+			// 객체정보1에서 객체정보2를 제거한다.
+			if(spanbox != null)
+				error.removeChild(spanbox);
+			// for(i=0;i<spanbox.length;i++){
+			// // for(조건문)을 안넣고 error.removeChild(spanbox); 넣어주면 spanbox를못찾아서 오류가난다
+			// 	error.removeChild(spanbox[i]);
+			// }
+		}
+		// regex라고 정의한 걸 함수로 바꿔 테스트(test)한다 text를
+		function validationpw(){
+			var text = document.getElementById('pw').value;
+			var regex = /^[A-z0-9]*([A-z]\d|\d[A-z])[A-z0-9]*$/;
+			clearErrorMessage();
+			// text의 길이가 a보다 작거나(||) 20보다 크면(if)
+			// 알림창 출력 후 return으로 함수 종료
+			if(text.length < 8 || text.length > 20) {
+				// alert('비밀번호는 8자 이상 20자 이하여야합니다.');
+				createErrorMessage('비밀번호는 8자 이상 20자 이하여야합니다.')
+				return false;
+			}
+			if(regex.test(text)){
+			// alert('정규표현식에 맞습니다.');
+			return true;
+			}
+			else{
+			// alert('정규표현식에 맞지 않습니다.')
+			createErrorMessage('정규표현식에 맞지 않습니다.')
+			return false;
+			}
+		}
+		function validationpw2(){
+			var text = document.getElementById('pw').value;
+			var regex = /^[A-z0-9]*([A-z]\d|\d[A-z])[A-z0-9]*$/;
+			clearBox();
+			// text의 길이가 a보다 작거나(||) 20보다 크면(if)
+			// 알림창 출력 후 return으로 함수 종료
+			if(text.length < 8 || text.length > 20) {
+				// alert('비밀번호는 8자 이상 20자 이하여야합니다.');
+				showBox('length');
+				return false;
+			}
+			if(regex.test(text)){
+			// alert('정규표현식에 맞습니다.');
+			return true;
+			}
+			else{
+			// alert('정규표현식에 맞지 않습니다.')
+			showBox('regex');
+			return false;
+			}
+		}
+		function length()	{
+			var text = document.getElementById('pw').value;
+			if(7 < text.length && text.length<21){
+				var hiddenbox = document.createTextNode('글자수가 맞습니다');
+				validationpw();
+			}else {
+				var hiddenbox = document.createTextNode('글자수가 맞지않습니다.');
+			}
+		}
+
+	</script>
+</body>
+</html>

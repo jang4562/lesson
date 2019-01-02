@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+		}
+		.red{
+			background-color: red;
+			font-size: 16px;
+		}
+		.red:hover{
+			display: block;
+		}
+	</style>
+	<script>
+		/*
+		hoever(함수1, 함수2)  : 함수1은 들어올 때 호출, 함수2는 나갈 때 호출
+		hoever(함수)				  : 들어올 때와 나갈때 함수를 각각 호출 (결과적으로 함수1개를 두번사용 토클클)
+		*/
+	$(document).ready(function(){
+		$('div').hover(function(){
+			$(this).text('호버 첫번째 함수 작동');
+		},function(){
+			$(this).text('호버 두번째 함수 작동');
+		});
+	});
+	</script>
+</head>
+<body>
+	<div>
+		호버예제
+	</div>
+</body>
+</html>

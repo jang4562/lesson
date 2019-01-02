@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<form class="form">
+		<div>
+			아이디<input type="text" placeholder="아이디" name="id" id="id">
+		</div>
+		<div id="boxId1">
+			아이디는 5자이상 10자이하이다.
+		</div>
+		<div id="boxId2">
+			아이디는 영문과 숫자로 이루어져있으며 시작은 영문자로 시작합니다.
+		</div>
+		<div>
+			비 번<input type="password" placeholder="비번" name="pw" id="pw">
+		</div>
+		<div id="boxId3">
+			비밀번호는 8자이상 20자이하이다.
+		</div>
+		<div id="boxId4">
+			비밀번호는 영문자와 숫자가 한개이상씩 포함되어야 한다.
+		</div>
+		<div>
+			비번 확인<input type="password" placeholder="비번확인" name="repw" id="repw">
+		</div>
+		<div id="boxId5">
+			비밀번호와 비밀번호 확인이 일치하지 않습니다.
+		</div>
+		<div>
+			<input type="radio" name="gender" value="male" checked>남성
+			<input type="radio" name="gender" value="female">여성
+		</div>
+		<button>회원가입</button>
+	</form>
+	<script>
+	$(document).ready(function(){
+		function checkVaildation(regex, text){
+			if(regex.test(text))
+			return true;
+			return false;
+		}
+		// html태그에 있는 id="id"인 객체 안에
+		// onchange="checkid()"를 지우고 난 후 추가하여 동일한 동작을 하도록 함
+		$('#id').change(checkid);
+		$('#pw').change(checkpw);
+		$('#repw').change(checkrepw);
+		function checkid(){
+			var id = $('#id').val();
+			var regex = /^[A-z]\w{4,9}$/;
+			clearbox('#boxId1');
+			clearbox('#boxId2');
+			if(id.length < 5 || id.length > 10){
+				showBox('#boxId1');
+				return false;
+			};
+			if(!checkVaildation(regex,id)){
+				showBox('#boxId2');
+				return false;
+			};
+			return true;
+		}
+		function checkpw(){
+			var pw = $('#pw').val();
+			var regex = /^\w*([A-z]\d|\d[A-z])\w*$/;
+			clearbox('#boxId3');
+			clearbox('#boxId4');
+			if(pw.length < 8 || pw.length > 20){
+				showBox('#boxId3');
+				return false;
+			}
+			if(!checkValidation(regex,pw)){
+			showBox('#boxId4')
+			return false;
+			}
+			return true;
+		}
+		function checkrepw(){
+			var pw = $('#pw').val();
+			var repw = $('#repw').val();
+			clearbox('#boxId5');
+			if(pw != repw){
+				showBox('#boxId5');
+				return false;
+			}
+			return true;
+		}		
+		function clearbox(id){
+			var element = $(id)		
+			if(element != null)
+			$(element).css('display','none');
+		}
+		function clear(){
+			clearbox('#boxId1');
+			clearbox('#boxId2');
+			clearbox('#boxId3');
+			clearbox('#boxId4');
+			clearbox('#boxId5');
+		}
+		$('.form').submit(function(){
+			var inSubmit = true;
+			if(!checkid())
+			inSubmit = false;
+			if(!checkpw())
+			inSubmit = false;
+			if(!checkrepw())
+			inSubmit = false;
+			return inSubmit;
+		});
+		function showBox(id){
+			var element = $(id)
+			if(element != null)
+			$(element).css('display','block');
+		}	
+		clear();
+	});
+	</script>
+</body>
+</html>

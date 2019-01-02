@@ -1,0 +1,45 @@
+			function idobj() {
+				var id = document.querySelector('#idbox>input').value;
+				var pwd = document.querySelector('#pwdbox>input').value;
+				var repwd = document.querySelector('#repwdbox>input').value;
+				var name = document.querySelector('#namebox>input').value;
+				var idregex = /^[A-z]\w{4,9}$/;
+				var pwdregex = /^[A-z0-9]*([A-z]\d|\d[A-z])[A-z0-9]*$/;
+				var nameregex = /^[°¡-ÆR]{3}$/;
+				clearErrormessage('idbox','#idbox>span');
+				clearErrormessage('pwdbox','#pwdbox>span');
+				clearErrormessage('repwdbox','#repwdbox>span');
+				clearErrormessage('namebox','#namebox>span');
+				if(id.length < 5 || id.length > 10) {
+					createErrormessage('ID´Â 5ÀÚ¸® ÀÌ»ó 10ÀÚ¸® ÀÌÇÏ¿©¾ßÇÕ´Ï´Ù.','idbox');
+					return false;
+				}
+				if(!regex.test(id)){
+					createErrormessage('Á¤±Ô Ç¥Çö½ÄÀÌ ¸ÂÁö¾Ê½À´Ï´Ù.','idbox');
+					return false;
+				}
+				if(pwd.length < 8 || pwd.length > 20) {
+					createErrormessage('Password´Â 8ÀÚ¸® ÀÌ»ó 20ÀÚ¸® ÀÌÇÏ¿©¾ßÇÕ´Ï´Ù.','pwdbox');
+					return false;
+				}
+				if(!pwdregex.test(pwd)){
+					createErrormessage('Á¤±Ô Ç¥Çö½ÄÀÌ ¸ÂÁö¾Ê½À´Ï´Ù.','pwdbox');
+					return false;
+				}
+				if(pwd != repwd){
+					createErrormessage('ºñ¹Ğ¹øÈ£°¡ ¼­·Î ´Ù¸¨´Ï´Ù.','repwdbox');
+					return false;
+				}
+				if(!regex.test(repwd)){
+					createErrormessage('Á¤±Ô Ç¥Çö½ÄÀÌ ¸ÂÁö¾Ê½À´Ï´Ù.','repwdbox');
+					return false;
+				}
+				if(name.length != 3) {
+					createErrormessage('ÀÌ¸§Àº 3ÀÚ¸® ÀÌ¿©¾ßÇÕ´Ï´Ù.','namebox');
+					return false;
+				}
+				if(!regex.test(name)){
+					createErrormessage('Á¤±Ô Ç¥Çö½ÄÀÌ ¸ÂÁö¾Ê½À´Ï´Ù.','namebox');
+					return false;
+				}
+			}

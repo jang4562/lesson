@@ -1,0 +1,36 @@
+@charset 'utf-8';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  /* height,width 를 100% 로 줫기때문에 position: absolute를 잡아주지않는이상 0으로 잡힌다 */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  background-image: url('../images/main_visual_img01.gif');
+  /* cover는 세로비율 contain 가로비율로 맞춰줌 */
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation-name: ani;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  opacity: 0.4;
+}
+/* 애니메이션은 최소 3가지 속성을 입력해야한다 
+(이름:함수처럼 정해놓은 애니메이션을불러옴,시간 : 시간을설정해주지않으면 기본값이 0,횟수 : 설정해주지않으면 기본카운트는 1회) */
+.body{
+  background-color: black;
+}
+@keyframes ani {
+  0% { background-image: url('../images/main_visual_img01.gif'); } /* 시작과끝을 맞춤으로써 끊어짐이없이 자연스럽게 */
+  25% { background-image: url('../images/main_visual_img02.gif'); }
+  50% { background-image: url('../images/main_visual_img03.gif'); }
+  75% { background-image: url('../images/main_visual_img04.gif'); }
+  100% { background-image: url('../images/main_visual_img05.gif'); }
+}

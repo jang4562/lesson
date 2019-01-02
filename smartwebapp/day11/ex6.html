@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="id">
+	<br>
+	<!--this는 onchange가 실행되는 input 태그 id=pw 가 자체가된다  -->
+	<input type="text" id="pw" onchange="change(this)">
+	<br>
+	<input type="text" id="repw">
+	<script>
+		// 실행되는주체 idObj가 명확하게 가르쳐주고있기에 this는 idObj를가르킴 
+		var idObj = document.getElementById('id');
+		idObj.onchange = function(){
+			console.log(this.value);
+		}
+		function change(obj){
+			console.log(obj.value);
+		}
+		// this는 this자체를 호출하는 객체
+		function change2(){
+			var text = this.value;
+			console.log(text);
+			this.style.color = 'red';
+			this.style.backgroundColor = 'yellow';
+		}
+		var input3 = document.getElementById('repw')
+		if(input3.addEventListener){
+			// addEventListener는 값이변할떄까지 기다리고잇다가 함수change2를 호출 (포커스 = 입력,화면주시 가 끝날떄 )
+			input3.addEventListener('change',change2);
+		}else { // attachEvent 는 addEventListener 와같다 호출하는메소가 다를뿐 (브라우저 버전이다르기떄문에 호출) 
+			input3.attachEvent('onchange',change2);
+		}
+		var arr = [400,200,8,300,7];
+		console.log(arr);
+		// 비교할 함수를 만든것 a-b해서 결과물이 양수면 a를 뒤로(a가 b보다 크다), 결과물이 음수면 a를 앞으로(a가 b보다 작다)
+		arr.sort(function(a,b){ // 함수는 기준점을 주는 역활
+			return a-b;
+		});
+		console.log(arr);
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			border: 1px solid black;
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			font-size: 20px;
+			line-height: 75px;
+			text-align: center;
+		}
+		.checked{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<script>
+	$(document).ready(function(){
+		$('div').click(function(){
+			// checked 클래스를 가진 객체의 갯수
+			var checkedCnt = $('.checked').length;
+			var maxCnt = 3;
+			if(checkedCnt < maxCnt){
+				$(this).toggleClass('checked');
+			}else{
+				// 클릭한 객체의 class에 checked 클래스가 없으면
+				if($(this).prop('class').indexOf('checked') == -1) 
+					alert('최대 3개까지 선택할 수 있습니다.');
+				$(this).removeClass('checked');
+			}
+			console.log($(this).prop('class').indexOf('checked'));
+		});
+	});
+	</script>
+</body>
+</html>
+<!-- 
+	$('div').click(function(){
+		var cnt = [];
+		cnt = $('div').each(function(){
+			$(this).prop('checked');
+		})
+		
+		console.log(cnt);
+		// if(cnt.length <= 3){
+			$(this).toggleClass('checked');
+		// 	cnt.push($(this).prop('class'))	
+		// }else{
+			
+		// }
+	});
+ -->

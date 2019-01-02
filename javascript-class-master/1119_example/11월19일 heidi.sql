@@ -1,0 +1,1 @@
+SELECT * FROM signup where id = 'test' AND pwd = 'q1we3';

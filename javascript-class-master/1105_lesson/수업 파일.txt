@@ -1,0 +1,39 @@
+cd C:\gif\example\HS\javascript-class-master\1105_lesson
+
+1. npm install -g express-generator 
+
+2. cd my_server
+
+3. experss -e
+
+4. npm install  (모듈설치)
+
+5. npm start (서버구동)
+
+
+  127.0.0.1:3000
+
+
+express 구조
+
+bin 폴더 = 서버실행파일 = npm start
+npde_modules 폴더 = 설치한 외부 모듈들을 모아놓은 장소
+
+public 폴더 = images,javascripts,stylesheets 각각 img 파일 ,자바스크랩트 ,css파일들을 보관
+
+routes 폴더 = 웹페이지를 표시해주고 서버에 내에서 특정 기능을 코드로 작성한 파일을 저장한다.
+
+views 폴더 = 클라이언트에게 제공할 웹페이지(기본골격)을 저장하고있는 폴더
+
+app.js 파일 = 서버관련 코드들이 모여 있는 파일
+	      웹페이지에서 추가되면 해당 웹페이지를 구동시키는 		      route 폴더를 지정한다
+
+package.json 파일 = 설치한 모듈들을 기록해놓은 파일
+
+package-lock.json 파일 = 설치한 모듈들이 업데이트 되어도 이미 설치한 버전을 유지하도록 기록해놓은 파일
+
+css,html 적용하기
+css -> public -> stylesheets
+html -> views -> 확장자 html을 ejs로 수정
+routes 폴더 index 파일 열기 6번째줄 'index' -> naverBox.ejs (ejs없어도됨) 로수정
+views 폴더에 naverBox 열어서 css위치 naverBox앞에 /stylesheets/ 붙이기 ex)/stylesheets/naverBox.css

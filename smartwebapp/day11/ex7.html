@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" class="ip" id="id">
+	<input type="text" class="ip" id="ip">
+	<button>버튼</button>
+	<script>
+		var pw1 = document.getElementById('pw');  // 값이1개여도 배열로저장
+		var pw2 = document.getElementsByClassName('ip')[1]; // 값이2개이상이기떄문에 2번째 배열인 [1]
+		var pw3 = document.querySelector('#pw'); // 위와는같은에 검색에 # ID를찾기위해붙임
+		 // 위와다른점은all인데 검색햇을떄 나오는값 젤위에꺼 첫번쨰검색만표시하는위에와달리 전체검색 배열로저장
+		var pw4 = document.querySelectorAll('.pw');
+	</script>
+</body>
+</html>

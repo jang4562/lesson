@@ -1,0 +1,35 @@
+@charset 'utf-8';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.box {
+	width: 100%;
+	height: 300px;
+	border: 1px solid black;
+}
+/* 반응형 으로 만들땐 순서가 매우중요가하다 3가지방법(max만, min만, 둘다 사용)
+ 1. max만 사용할 경우 순서를 반대로 가장큰 수치부터 써준다 ex)max-width:1000px 초록색부터 
+ 2. min만 사용할 경우 순서를 최소수치부터 써야한다 1의 경우와 반대로 해준다고보면된다*/
+
+@media (max-width:500px){
+	.box {
+		border-color: red;
+	}
+}
+@media (min-width:501px) and (max-width:750px) {
+	.box {
+		border-color: blue;
+	}
+}
+@media (min-width:751px) and (max-width:1000px) {
+	.box {
+		border-color: green;
+	}
+}
+@media (min-width:1001px) {
+	.box {
+		border-color: black;
+	}
+}

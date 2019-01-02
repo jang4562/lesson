@@ -1,0 +1,14 @@
+11/02부분 수업진행내용 
+1) 저번시간에 박스5부분 마저 만듬  css)453행부터 시작 html)<div class="box5-item2">부터시작 
+2) 5/7 만들고 버튼 생성    css)499행까지 html) 5/7중 5부분 숫자강조를위해 b태그 생성
+3) 검색창부분 input 태그 만듬 css)input-box>input 부분부터시작  html)<div class="input-box">안에  input 타입생성 부분
+4) box2 부분에 뉴스 스탠드 제작 css)box2-inner 부분 시작  html)<div class="box2">부터시작
+5) box2 부분에 뉴스 컨텐츠 제작 css)news-content 부분 시작 html)<div class="news-content">부터시작
+6) box2 부분에 우측 부분 이미지 제작 css)box2-inner2 부분시작 html)<ul class="box-inner2">부터시작
+7) box3 상단 부분 만들기 css)box3-inner1 부분 시작  html)<div class="box3">부터시작
+	7.1 상단 좌측부분
+	7.2 상단 중앙부분
+	7.3 상단 우측부분
+	7.4 상단 우측부분 버튼
+나머지 box3 하단부분 뉴스아이콘부분들은 7,8교시에 직접만들어보고
+다음주 금요일날 선생님과 만들어보기

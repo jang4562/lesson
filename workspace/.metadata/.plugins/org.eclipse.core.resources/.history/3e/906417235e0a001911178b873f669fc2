@@ -1,0 +1,4 @@
+	<footer class = "container">
+		<%-- &copy; 는 저작권 마크 글씨코드 --%>
+		<p>&copy; WebMarket</p>
+	</footer>

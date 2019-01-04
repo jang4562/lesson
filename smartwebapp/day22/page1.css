@@ -1,0 +1,51 @@
+@charset 'utf-8';
+
+.font-black{
+  color: black;
+}
+/* .swiper-slide */
+.contents .swiper-slide {
+  /* 컨텐츠 내용이 없거나 화면을 다 채우지 못하더라도 swiper를 화면 전에체
+  적용하면서 스크롤바가 생기지 않도록 100vh에서 네비게이션 높이 40px를 제거 */
+  min-height: calc(100vh - 40px);
+}
+.title.swiper-container {
+    height: 30px;
+    background-color: #2f2d2d;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+}
+.title .swiper-slide-active {
+    color: yellow;
+    font-weight: bold;
+}
+.img {
+  height: 100%;
+  width: 100%;
+  /* height,width 를 100% 로 줫기때문에 position: absolute를 잡아주지않는이상 0으로 잡힌다 */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+}
+.img1 {
+  background-image: url('../images/img_01_01.jpg');
+}
+.img2 {
+  background-image: url('../images/img_01_02.jpg');
+}
+.img3 {
+  background-image: url('../images/img_01_03.jpg');
+}
+.title .swiper-slide {
+    width: auto;   
+}
+.carousel-item img{
+    width: 100%;
+    height: auto;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    background-color: black;
+}

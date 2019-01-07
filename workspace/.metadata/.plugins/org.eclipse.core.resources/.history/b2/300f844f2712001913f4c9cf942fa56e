@@ -1,0 +1,12 @@
+package Lecture20190107;
+
+public class Person {
+	private int id = 20181004;
+	private String name = "홍길순";
+	
+	public Person() {
+		
+	}
+	
+	
+}

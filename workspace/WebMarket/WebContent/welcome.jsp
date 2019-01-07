@@ -38,8 +38,10 @@
 					<%= tagline %>
 				</h3>
 			</div>
+			<hr>			
 		</div>
 	</main>
+<%-- include file="footer.jsp"는  위에 file="./header.jsp" 코드는같다  --%>
 <%-- 위에 file="./header.jsp" 코드는같다  --%>
 <%@ include file="footer.jsp" %>
 </body>

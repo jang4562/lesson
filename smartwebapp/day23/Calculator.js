@@ -28,6 +28,7 @@ $(document).ready(function(){
   $('.op').click(function(){
     var tmp = parseFloat(input.val());
     if(!isPushOp || op == '='){
+      pointCnt=0; 
       switch(op){
         case '+': num1 = num1 + tmp; break;
         case '-': num1 = num1 - tmp; break;
@@ -40,6 +41,7 @@ $(document).ready(function(){
     }
     isPushOp = true;
     console.log(num1);
+    console.log(op);
   });
 
 });

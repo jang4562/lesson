@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+  <title>자식 예제</title>
+</head>
+<body>
+  <input type="text" id="data">
+  <button>확인</button>
+  <script>
+      // document.getElementById('divData').value = opener.document.getElementById('input').value;
+      // var id = $(opener.document).find('#getId').val()  
+      var id = $('#getId',opener.document).val()  
+      $('#data').val($('#'+id,opener.document).val());
+      $('button').click(function(){
+        // opener.document.getElementById('getId').value == $('#getId',opener.document).val() 서로같다 jquery와 js방식의차이
+        opener.document.getElementById(id).value = $('#data').val();
+        window.close();
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+  <title>자식 윈도우</title>
+</head>
+<body>
+  자식창 <br>
+  <input type="text" id="divData" readonly>
+  <input type="text" id="inputData">
+  <button id="btnOk" onclick="sendData()">확인</button>
+  <script>
+    $(document).ready(function(){
+      // parents.html에서 자식창열기버튼을누를때 그안에 값을 child.html이 생길때 넣어주는 코드(child.html이만들어지면서부터 생겨야한다)
+      document.getElementById('divData').value = opener.document.getElementById('input').value;
+    });
+    function sendData(){
+      opener.document.getElementById('input').value = document.getElementById('inputData').value;
+      window.close();
+    }
+  </script>
+</body>
+</html>

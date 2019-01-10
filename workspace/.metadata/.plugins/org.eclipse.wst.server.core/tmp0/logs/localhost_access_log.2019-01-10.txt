@@ -1,0 +1,16 @@
+127.0.0.1 - - [10/Jan/2019:17:16:24 +0900] "GET / HTTP/1.1" 404 1099
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:17:09 +0900] "GET /WebMarket/WebContent/product.jsp HTTP/1.1" 404 1139
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:17:36 +0900] "GET /WebMarket/product.jsp HTTP/1.1" 500 2989
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:17:46 +0900] "GET /WebMarket/products.jsp HTTP/1.1" 200 1509
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:17:47 +0900] "GET /WebMarket/product.jsp?id=P1234 HTTP/1.1" 200 1183
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:17:54 +0900] "GET /WebMarket/welcome.jsp HTTP/1.1" 200 874
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:02 +0900] "GET /WebMarket/products.jsp HTTP/1.1" 200 1509
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:02 +0900] "GET /favicon.ico HTTP/1.1" 404 1110
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:04 +0900] "GET /WebMarket/product.jsp?id=P1234 HTTP/1.1" 200 1183
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:06 +0900] "GET /WebMarket/products.jsp HTTP/1.1" 200 1509
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:07 +0900] "GET /WebMarket/product.jsp?id=P1234 HTTP/1.1" 200 1183
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:07 +0900] "GET /WebMarket/products.jsp HTTP/1.1" 200 1509
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:20 +0900] "GET /WebMarket/product.jsp?id=P1234 HTTP/1.1" 200 1183
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:18:22 +0900] "GET /WebMarket/products.jsp HTTP/1.1" 200 1509
+91.244.122.67 - - [10/Jan/2019:17:23:31 +0900] "GET / HTTP/1.1" 404 1099
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:24:36 +0900] "GET /WebMarket/footer.jsp HTTP/1.1" 200 99

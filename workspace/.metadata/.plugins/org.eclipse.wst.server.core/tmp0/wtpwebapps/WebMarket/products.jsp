@@ -28,8 +28,7 @@
 				<h3><%=product.getPname()%></h3>
 				<p><%=product.getDescription()%>
 				<p><%=product.getUnitPrice()%>원
-				<p>재고 : <%=product.getUnitsInStock()%>개
-				<h4><%=product.getCondition()%></h4>
+				<p> <a href="./product.jsp?id=<%=product.getProductId()%>"class="btn btn-secondary"role="button">상세 정보&raquo;></a>
 			</div>
 			<%
 				}

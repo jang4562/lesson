@@ -59,7 +59,7 @@ $(document).ready(function(){
 		
 		isPushOp = true;
 	});
-<<<<<<< HEAD
+
 });
 
 /*
@@ -142,6 +142,3 @@ $(document).ready(function(){
     });
 });
 */
-=======
-});
->>>>>>> master

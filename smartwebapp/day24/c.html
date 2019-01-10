@@ -12,14 +12,19 @@
 		<option value="대한민국">대한민국</option>
 		<option value="미국">미국</option>
 		<option value="중국">중국</option>
+		<option value="not">중립국</option>
 	</select>
 	<button type="button" id="btnOk">확인</button>
 	<script>
 		$(document).ready(function(){
 			$('#btnOk').click(function(){
 				var data = $('#country').val();
+				if(data != "not"){
 				$(opener.document).find('#inputCountry').val(data);
 				window.close();
+				}
+				else
+				alert("중립국은 선택할수 없습니다.");
 			})
 		})
 	</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="inputbox">
+  </div>
+  <input type="button" value="추가">
+  <button id="ok">확인</button>
+  <script>
+    $(document).ready(function(){
+      var oriData = $(opener.document).find('#readbox').val();
+      arrData = oriData.split(',');
+      var str="";
+      // 배열이나 문자열은 each()함수를 사용하지못하기때문에 for문을 사용
+      for(var i =0;i<arrData.length;i++){
+        str += '<input type="text" value="'+ arrData[i] +'"><br>'
+      }
+      $('.inputbox').html(str);
+      });
+  </script>
+</body>
+</html>

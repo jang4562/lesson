@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="inputbox">
+    <input type="text" class="text" autofocus><br>
+  </div>
+  <input type="button" value="추가">
+  <button id="ok">확인</button>
+  <script>
+    $(document).ready(function(){
+      $('input[type="button"]').click(function(){
+        var str = '<input type="text" class="text"><br>'
+        var str2 = '<br><input type="text" class="text">'
+        $('.inputbox').append(str).find('.text').last().focus();
+        // $('.text').last().focus(); 해당코드를 위에코드로 줄임 last()를안넣어도 되지만 컴퓨터작업이늘어남 //blur()
+        // $(this).parents().find('.inputbox).append(str);
+        // $('body').find('.text').last().closest('div').append(str);
+        // parents(셀렉터)코드는 부모객체에서 검색된 모든 셀렉터를 반환
+        // closest(셀렉터)코드는 부모객체중에서 가장가까운셀렉터를찾아서 반환해준다
+        // $('body').find($('input[type="text"]')).last().append(str); 해당 코드는 자식태그에 코드가넣어짐
+        // $(str).appendTo('.inputbox');
+        // $('.text').last().after(str2); 위에문제점들을찾은 함수가after()코드로 검색된코드뒤에 추가된다
+      });
+      $('#ok').click(function(){
+        var arr = []; // 1
+        // var arr = ""; // 2
+        $('.text').each(function(){
+          var str = $(this).val();
+          if(str != "")
+            arr.push(str); // 1
+            // arr += ',' +str; // 2
+        });
+        // var result = confirm('입력하신내용이 ' + arr +' 가 맞습니까?') //confirm
+        // if(result){  //confirm
+          // arr = arr.slice(1); // arr = arr.substr(1) 이랑같은코드 앞에 ","를 지워주기위한코드 // 2
+          // opener.document.getElementsByClassName('클래스이름')[0].value=arr // js방식
+          // .join(',') 코드 는 배열방식을위한 코드 ,말고 다른구분자를넣을때 쓰는코드 String방식일떈 불필요
+          $(opener.document).find('#readbox').val(arr.join(',')); 
+          opener.$('#readbox').trigger('change');
+          // setTimeout(function(){window.close();},1000); / 1초후 닫는예제
+        // }  //confirm
+      });
+    });
+  </script>
+</body>
+</html>

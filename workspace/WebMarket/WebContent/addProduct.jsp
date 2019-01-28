@@ -17,7 +17,8 @@
 	</div>
 	<div class="container">
 		<div class="text-right">
-			<a href="?language=ko" >Korean</a>|<a href="?language=en">English</a><a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
+			<a href="?language=ko" >Korean</a>|<a href="?language=en">English</a>
+			<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
 		</div>
 		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
 			<div class="form-group row">
@@ -59,7 +60,7 @@
 			<div class="form-group row">
 				<label class="col-sm-2"><fmt:message key="unitsInStock" /></label>
 				<div class="col-sm-3">
-					<input type="text" name="unitsInStock" class="form-control" >
+					<input type="text" id="unitsInStock" name="unitsInStock" class="form-control" >
 				</div>
 			</div>
 			<div class="form-group row">

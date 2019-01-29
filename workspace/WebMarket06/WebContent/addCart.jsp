@@ -1,7 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="dto.Product" %>
+<%@ include file="dbconn.jsp"%>
 <%
 	String id = request.getParameter("id");
 	if (id == null || id.trim().equals("")) {
@@ -9,21 +10,28 @@
 		return;
 	}
 
-	ProductRepository dao = ProductRepository.getInstance();
+	PreparedStatement pstmt = null;	
+	ResultSet rs = null;
 
-	Product product = dao.getProductById(id);
-	if (product == null) {
-		response.sendRedirect("exceptionNoProductId.jsp");
+	Product product = new Product();
+	
+	String sql = "select * from product where p_id = ?";
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, id);
+	rs = pstmt.executeQuery();
+	
+	while (rs.next()) {
+		product.setCategory(rs.getString("p_category"));
+		product.setCondition(rs.getString("p_condition"));
+		product.setDescription(rs.getString("p_description"));
+		product.setFilename(rs.getString("p_fileName"));
+		product.setManufacturer(rs.getString("p_manufacturer"));
+		product.setPname(rs.getString("p_name"));
+		product.setProductId(rs.getString("p_id"));
+		product.setUnitPrice(rs.getInt("p_unitPrice"));
+		product.setUnitsInStock(rs.getInt("p_unitsInStock"));
 	}
 
-	ArrayList<Product> goodsList = dao.getAllProducts();
-	Product goods = new Product();
-	for (int i = 0; i < goodsList.size(); i++) {
-		goods = goodsList.get(i);
-		if (goods.getProductId().equals(id)) { 			
-			break;
-		}
-	}
 	
 	ArrayList<Product> list = (ArrayList<Product>) session.getAttribute("cartlist");
 	if (list == null) { 
@@ -43,8 +51,8 @@
 	}
 
 	if (cnt == 0) { 
-		goods.setQuantity(1);
-		list.add(goods);
+		product.setQuantity(1);
+		list.add(product);
 	}
 
 	response.sendRedirect("product.jsp?id=" + id);

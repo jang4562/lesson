@@ -13,8 +13,15 @@
 	}
 </script>
 </head>
+			<%@ include file="dbconn.jsp"%>
 <%
 	String edit = request.getParameter("edit");
+	PreparedStatement pstmt = null;	
+	ResultSet rs = null;
+	
+	String sql = "select * from product";
+	pstmt = conn.prepareStatement(sql);
+	rs = pstmt.executeQuery();
 %>
 </head>
 <body>
@@ -26,14 +33,7 @@
 	</div>
 	<div class="container">
 		<div class="row" align="center">
-			<%@ include file="dbconn.jsp"%>
 			<%
-				PreparedStatement pstmt = null;	
-				ResultSet rs = null;
-				
-				String sql = "select * from product";
-				pstmt = conn.prepareStatement(sql);
-				rs = pstmt.executeQuery();
 				while (rs.next()) {
 			%>
 			<div class="col-md-4">

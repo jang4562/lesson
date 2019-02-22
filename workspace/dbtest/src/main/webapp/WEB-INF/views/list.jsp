@@ -25,8 +25,8 @@
     <p>
       <select name="type" size="1" class="form-control" style="display:inline-block; width:105px">
         <option value="0" <c:if test="${pageMarker.criteria.type==0}">selected</c:if>>아이디
-        <option value="1" <c:if test="${pageMarker.criteria.type==0}">selected</c:if>>비밀번호
-        <option value="2" <c:if test="${pageMarker.criteria.type==0}">selected</c:if>>고유번호
+        <option value="1" <c:if test="${pageMarker.criteria.type==1}">selected</c:if>>비밀번호
+        <option value="2" <c:if test="${pageMarker.criteria.type==2}">selected</c:if>>고유번호
       </select>
       <input type="text" value="${pageMarker.criteria.search}" name="search" placeholder="Search" class="form-control" style="display:inline-block; width:400px">
       <input type="submit" value="검색" class="btn btn-success" style="padding:5px; margin:0">

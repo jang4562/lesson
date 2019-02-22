@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.dbtest.dao.UserDao">
+  <insert id="register">
+    insert into dbtest(id, pwd) values(#{id}, #{pwd});
+  </insert>
+  
+  <select id="getListView" resultType="com.spring.dbtest.vo.UserVo">
+    select * from dbtest order by idx desc;
+  </select>
+  
+  <select id="getSearchView" resultType="com.spring.dbtest.vo.UserVo">
+    <!-- select * from dbtest where id like concat('%1%'); -->
+    select * from dbtest where id like concat('%',#{search},'%');
+  </select>
+  
+  <update id="userUpdate">
+    update dbtest set pwd=#{pwd} where id=#{id};
+  </update>
+  
+  <delete id="userDelete">
+    delete from dbtest where id=#{id} and pwd=#{pwd};
+  </delete>
+  
+  <select id="getCountUserLists" resultType="int"> <!-- 페이징처리시필요.(전체개수) -->
+    select count(idx) from dbtest
+    <if test="cri.type==0">
+      where id like concat('%', #{cri.search}, '%')
+    </if>
+    <if test="cri.type==1">
+      where pwd like concat('%', #{cri.search}, '%')
+    </if>
+    <if test="cri.type==2">
+      where idx like concat('%', #{cri.search}, '%')
+    </if>
+    ;
+  </select>
+  
+  <select id="getUserLists" resultType="com.spring.dbtest.vo.UserVo"> <!-- 페이징처리시필요. -->
+    select * from dbtest
+    <if test="cri.type==0">
+      where id like concat('%', #{cri.search}, '%')
+    </if>
+    <if test="cri.type==1">
+      where pwd like concat('%', #{cri.search}, '%')
+    </if>
+    <if test="cri.type==2">
+      where idx like concat('%', #{cri.search}, '%')
+    </if>
+      order by idx desc limit #{cri.startPage},#{cri.perPagenum};
+  </select>
+</mapper>
